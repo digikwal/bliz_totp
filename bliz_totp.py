@@ -111,13 +111,13 @@ def main():
         if not devicesecret:
             logger.error("Failed to retrieve device secret. Exiting.")
             print()
-        sys.exit(1)    
+            sys.exit(1)    
             
         base32_string = generate_base32(devicesecret)
         if not base32_string:
             logger.error("Failed to convert device secret to Base32. Exiting.")
             print()
-        sys.exit(1)    
+            sys.exit(1)    
 
         generate_totp(base32_string)
 
@@ -274,3 +274,4 @@ atexit.register(clear_memory)
 
 if __name__ == "__main__":
     main()
+
